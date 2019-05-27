@@ -182,10 +182,10 @@ beta_grid = make_grid(beta_GMM, 0.005, 10)
 
 dict_to_max, lambda_dictionary = brute_force(sample, beta_grid, NO_PMC)
 
-max_objective = max(dict_to_max.values())
+min_objective = min(dict_to_max.values())
 
-for key, value in dict_to_max.items():
-    if value == max_objective:
+for key, value in dict_to_in.items():
+    if value == min_objective:
         beta_GEL = key
 
 lambda_GEL = lambda_dictionary[beta_GEL]
